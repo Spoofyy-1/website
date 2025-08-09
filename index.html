@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Access Ally — Ally Allience</title>
+    <meta name="description" content="Access Ally is a nonprofit supporting Japanese Paralympic athletes through translation and documentation support." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <span class="brand-primary">Access Ally</span>
+          <span class="brand-secondary">Ally Allience</span>
+        </div>
+        <nav class="nav">
+          <a href="#about">About</a>
+          <a href="#donate">Donate</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-text">
+            <h1>Empowering Japanese Paralympians with language support</h1>
+            <p>
+              We bridge language barriers so athletes can focus on what matters most: training and competition.
+            </p>
+            <div class="hero-cta">
+              <a class="button button-primary" href="#donate">Support our mission</a>
+            </div>
+          </div>
+          <div class="image-placeholder" aria-label="Hero image placeholder">
+            <span>Hero image — replace with a photo of Japanese Paralympic athletes</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container grid two-col">
+          <div>
+            <h2>About Us</h2>
+            <p>
+              Access Ally is a nonprofit organization dedicated to supporting Japanese Paralympic athletes in their journey to international competition. Founded by bilingual advocates Ren and Ken, our mission is to bridge language barriers by providing essential translation services for visa applications, entry documents, and other official communications.
+            </p>
+            <p>
+              We understand the challenges faced by athletes navigating complex international procedures in a foreign language. Our goal is to make this process smoother and more accessible, allowing talented athletes to focus on their training and competition without language worries.
+            </p>
+            <p>
+              At Access Ally, we are committed to empowering Paralympic athletes by offering accurate and timely translations, fostering greater inclusion and global participation. Together, we aim to help Japanese Paralympians shine on the world stage.
+            </p>
+          </div>
+          <div class="image-placeholder" aria-label="About section image placeholder">
+            <span>About image — replace with a relevant photo or organization logo</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="donate" class="section section-accent">
+        <div class="container grid two-col">
+          <div>
+            <h2>Donate</h2>
+            <p>
+              Your support enables us to provide timely, accurate translation services for athletes facing international documentation hurdles. Every contribution helps remove barriers and advance inclusion.
+            </p>
+            <a class="button button-primary" href="https://gofund.me/abcd1234" target="_blank" rel="noopener noreferrer">
+              Donate on GoFundMe
+            </a>
+            <p class="small muted">Replace the GoFundMe link above with your live campaign URL.</p>
+          </div>
+          <div class="image-placeholder" aria-label="Donate section image placeholder">
+            <span>Donation image — replace with a photo representing community support</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container">
+          <h2>Contact</h2>
+          <div class="contact-cards">
+            <div class="card">
+              <h3>Ren</h3>
+              <a href="mailto:ren@example.com">ren@example.com</a>
+              <p class="small muted">Placeholder — replace with Ren's email</p>
+            </div>
+            <div class="card">
+              <h3>Ken</h3>
+              <a href="mailto:ken@example.com">ken@example.com</a>
+              <p class="small muted">Placeholder — replace with Ken's email</p>
+            </div>
+            <div class="card">
+              <h3>Organization</h3>
+              <a href="mailto:info@example.org">info@example.org</a>
+              <p class="small muted">Placeholder — replace with the organization's email</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">Access Ally</div>
+        <div class="small muted">© <span id="year"></span> Access Ally. All rights reserved.</div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+  </html>
+
+
