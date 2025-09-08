@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Competition Entry Support | Access Ally</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .form { display: grid; gap: 14px; }
+      .field { display: grid; gap: 6px; }
+      .field label { font-weight: 600; }
+      input[type="text"], input[type="url"], input[type="email"], textarea {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        color: var(--text);
+        border-radius: 10px;
+        padding: 10px 12px;
+        font: inherit;
+        outline: none;
+      }
+      textarea { min-height: 140px; resize: vertical; }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <span class="brand-primary">Access Ally</span>
+        </div>
+        <nav class="nav">
+          <a href="index.html#about">About</a>
+          <a href="index.html#donate">Donate</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="ja.html">日本語</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <h1>Competition Entry Support</h1>
+          <p class="muted">Submit your details below. Your email client will open a draft addressed to our team with your information pre-filled.</p>
+          <form class="form" onsubmit="return sendEmail(event)">
+            <div class="field">
+              <label for="applicantName">Your full name</label>
+              <input id="applicantName" type="text" placeholder="e.g., Taro Yamada" required />
+            </div>
+            <div class="field">
+              <label for="applicantEmail">Your email</label>
+              <input id="applicantEmail" type="email" placeholder="you@example.com" required />
+            </div>
+            <div class="field">
+              <label for="competitionLink">Competition link</label>
+              <input id="competitionLink" type="url" placeholder="https://..." required />
+            </div>
+            <div class="field">
+              <label for="deadline">Submission deadline (if any)</label>
+              <input id="deadline" type="text" placeholder="YYYY-MM-DD or 'ASAP'" />
+            </div>
+            <div class="field">
+              <label for="details">Additional details</label>
+              <textarea id="details" placeholder="List forms to translate, languages, special notes, etc."></textarea>
+            </div>
+            <button class="button button-primary" type="submit">Prepare Email</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">Access Ally</div>
+        <div class="small muted">© <span id="year"></span> Access Ally. All rights reserved.</div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      function sendEmail(event) {
+        event.preventDefault();
+        const to = 'nakao783495@sas.edu.sg';
+        const name = document.getElementById('applicantName').value.trim();
+        const email = document.getElementById('applicantEmail').value.trim();
+        const link = document.getElementById('competitionLink').value.trim();
+        const deadline = document.getElementById('deadline').value.trim();
+        const details = document.getElementById('details').value.trim();
+
+        const subject = encodeURIComponent(`[Entry Support] ${name} — Competition Translation Request`);
+        const bodyLines = [
+          `Applicant name: ${name}`,
+          `Applicant email: ${email}`,
+          `Competition link: ${link}`,
+          `Deadline: ${deadline || 'N/A'}`,
+          '',
+          'Details:',
+          details || 'N/A',
+          '',
+          'Please reply-all so I receive updates. Thank you!'
+        ];
+        const body = encodeURIComponent(bodyLines.join('\n'));
+        const mailto = `mailto:${to}?subject=${subject}&body=${body}`;
+
+        window.location.href = mailto;
+        return false;
+      }
+    </script>
+  </body>
+  </html>
+
+
