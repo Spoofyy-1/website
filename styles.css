@@ -51,7 +51,11 @@ html, body {
 .brand-primary {
   font-weight: 700;
   letter-spacing: 0.2px;
+  color: var(--text);
+  text-decoration: none;
 }
+.brand-primary:visited { color: var(--text); }
+.brand-primary:hover { opacity: 0.95; }
 .brand-secondary {
   color: var(--muted);
   font-size: 12px;
